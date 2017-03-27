@@ -1,0 +1,491 @@
+// using sass skeleton for columns
+// github.com/whatsnewsaes / getskeleton.com
+
+/* Base files. */
+@import "base/normalize";
+@import "base/variables";
+@import "base/functions";
+@import "base/base-styles";
+@import "base/utils";
+@import "base/typography";
+
+/* Modules */
+@import "modules/grid";
+@import "modules/buttons";
+@import "modules/forms";
+@import "modules/lists";
+@import "modules/code";
+@import "modules/tables";
+@import "modules/spacing";
+@import "modules/media-queries";
+@import "modules/codrops-loader";
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+// hide main site while loader loads
+body.home #main-site {
+  display: none;
+}
+
+body.pnf {
+  background: #050505;
+}
+
+section {
+  overflow: hidden;
+}
+
+.no-scroll {
+  height: 100%;
+  overflow: hidden;
+}
+
+h3 {
+  font-weight: 700;
+    margin: 60px 0 35px;
+    font-size: 30px;
+}
+
+p {
+  font-size: 22px;
+}
+
+
+
+section.lightBackground {
+  background: #f7f7f7;
+}
+
+
+#loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #050505;
+}
+
+.loader svg {
+  width: 50%;
+}
+
+header {
+  background: #050505;
+}
+
+
+
+
+nav {
+  float: right;
+  margin: 30px 0 0;
+  min-height: 110px;
+  ul {
+    margin: 0 20px 0 0;
+    li {
+      float: left;
+      list-style: none;
+      a {
+        padding: 10px 15px;
+        color: #9d9d9d;
+        text-decoration: none;
+        line-height: 20px;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+
+.codrops-top {
+  background: $black;
+  position: relative;
+  z-index: 10;
+}
+
+
+.hero {
+  padding: 190px 0 200px;
+  color: #f7f7f7;
+  background: $black;
+  overflow: inherit;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.hero h2 {
+  margin: 8px 0 0 3px;
+  font-weight: 400;
+  font-size: 140%;
+  line-height: 1.5;
+  .ampersand {
+    font-family: monospace;
+    font-size: 154%;
+  }
+}
+
+@media only screen and (max-width : 768px) {
+  .hero {
+    p {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 65px;
+    }
+    h2 {
+      font-size: 128%;
+    }
+  }
+}
+
+@media only screen and (max-width : 668px) {
+  .hero {
+    p {
+      margin-bottom: 11px;
+      font-size: 18px;
+    }
+    h1 {
+      font-size: 55px;
+    }
+    h2 {
+      margin-top: 3px;
+      font-size: 110%;
+    }
+  }
+}
+
+@media only screen and (max-width : 515px) {
+  .hero {
+    p {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+    h1 {
+      font-size: 45px;
+    }
+    h2 {
+      margin-top: 5px;
+      font-size: 135%;
+      .noMobile {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 380px) {
+  .hero {
+    h1 {
+      font-size: 35px;
+    }
+    h2 {
+      font-size: 108%;
+      .noMobile {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 285px) {
+  .hero {
+    p {
+      font-size: 17px;
+    }
+    h1 {
+      font-size: 25px;
+    }
+    h2 {
+      font-size: 79%;
+      .noMobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.hero .hero-image {
+  text-align: center;
+}
+
+
+
+
+
+
+.about {
+  padding: 0 0 70px;
+  color: #050505;
+}
+
+.about img {
+  margin: 128px 0 0;
+  width: 100%;
+  display: none;
+}
+
+
+@media only screen and (min-width : 1200px) {
+  .about img {
+    margin: 76px 0 0;
+  }
+}
+
+@media (#{$bp-larger-than-desktop}) {
+  .about img {
+    display: block;
+  }
+}
+
+
+
+
+
+
+.work {
+  padding: 0 40px 75px;
+  color: #050505;
+  background: #e0e0e0;
+}
+
+/* work hover animation -  http://codepen.io/littlesnippets/pen/adLELd */
+.gallery {
+  padding: 0;
+  width: 100%;
+  //display: flex;
+  //flex-wrap: wrap;
+  //justify-content: center;
+}
+
+.gallery .imageWrapper.gridSmall {
+  //flex-basis: 30%;
+}
+
+.gallery .imageWrapper.gridMedium {
+  //flex-basis: 60%;
+}
+
+.gallery .imageWrapper.gridLarge {
+  //flex-basis: 92%;
+}
+
+@media only screen and (max-width : 768px) {
+  .gallery .imageWrapper.gridSmall,
+  .gallery .imageWrapper.gridMedium,
+  .gallery .imageWrapper.large {
+    //flex-basis: 90%;
+  }
+}
+
+figure.imageWrapper {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin-top: 10px;
+  color: #000000;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+}
+
+figure.imageWrapper * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+figure.imageWrapper .image {
+  /*
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125%; // To compensate for mobile browser address bar space
+  background: url(/images/bg.jpg) no-repeat;
+  background-size: 100% 100%;
+  */
+  max-width: 100%;
+  height: 250px;
+  vertical-align: top;
+  background-size: cover;
+  background-position: 50% 0;
+}
+
+/* fixes for ios */
+@media (#{$bp-larger-than-tablet}) {
+  figure.imageWrapper .image {
+    max-width: 100%;
+    height: 250px;
+    vertical-align: top;
+    background-size: cover;
+    background-position: 50% 0;
+    min-width: 100%;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .gallery .imageWrapper.gridSmall .image {
+    background-position: 35% 0;
+  }
+}
+
+.gallery .imageWrapper.gridLarge .image {
+  height: 350px;
+}
+
+figure.imageWrapper .image.rajiv {
+  background-image: url("../images/work/rajiv-satyal.jpg");
+}
+
+figure.imageWrapper .image.first {
+  background-image: url("../images/work/first-community-cu.jpg");
+}
+
+figure.imageWrapper .image.solvay {
+  background-image: url("../images/work/solvay-bank.jpg");
+}
+
+figure.imageWrapper .image.stc {
+  background-image: url("../images/work/stc-capital.jpg");
+}
+
+figure.imageWrapper .image.freedom {
+  background-image: url("../images/work/freedom-road-financial.jpg");
+}
+
+figure.imageWrapper figcaption {
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+
+figure.imageWrapper h4 {
+  margin: 0;
+  font-size: 150%;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width : 992px) {
+  figure.imageWrapper h4 {
+    font-size: 115%;
+  }
+}
+
+figure.imageWrapper p {
+  font-size: 100%;
+}
+
+figure.imageWrapper:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+figure.imageWrapper.gridSmall:after {
+  background-color: #efefef;
+}
+
+figure.imageWrapper a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+figure.imageWrapper:hover figcaption,
+figure.imageWrapper.hover figcaption {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+figure.imageWrapper:hover:after,
+figure.imageWrapper.hover:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 0.9;
+}
+
+
+
+
+
+.contact {
+  padding: 0 0 50px;
+}
+
+.contact .contactLogo {
+  margin: 104px 0 0;
+  max-width: 120px;
+}
+
+@media only screen and (max-width : 620px) {
+  .contact .contactLogo {
+    display: none;
+  }
+}
+
+.contact a {
+  color: #050505;
+}
+
+@media only screen and (max-width : 768px) {
+  .contact p {
+    font-size: 130%;
+  }
+}
+
+.contact ul {
+  margin: 13px 0 6px;
+  overflow: hidden;
+}
+
+@media only screen and (max-width : 768px) {
+  .contact ul {
+    margin-left: -8px;
+  }
+}
+
+.contact li {
+  margin: 0 1px;
+  float: left;
+  list-style: none;
+}
+
+.contact i {
+  font-size: 170%;
+}
