@@ -16,7 +16,6 @@ todo:
 - switch grunt to gulp
 - add src & dist folders/environments
 - compress/uglify html/css
-- get https
 - get cdn
 - switch font-awesome to sprite images
 - add js forcing first section to full screen height
